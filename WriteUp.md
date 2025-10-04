@@ -78,7 +78,7 @@ Example test message (raw):
 ```bash
 mosquitto_pub -h <IP> -p 1883 -t 'XD2rfR9Bez/GqMpRSEobh/TvLQehMg0E/sub' -m '{HELP}'
 ```     
-![publish](screenshots/mosquitto_pub)    
+![publish](screenshots/mosquitto_pub.png)    
 If the service expects base64 or another wrapper, adjust accordingly. In my run, after decoding flows I learned the expected formats were something like ``base64({"id":"<id>", "cmd":"HELP, SYS or CMD", "arg":"<arg>"})``
 
 After sending the correctly structured message (the challenge used base64-wrapped payloads in messages), I got this helpful reply:
