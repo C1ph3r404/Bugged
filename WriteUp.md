@@ -103,12 +103,15 @@ echo '{"id":"cdd1b1c0-1c40-4b0f-8e22-61b357548b7d", "cmd":"CMD", "arg":"ls"}' | 
 mosquitto_pub -h <IP> -p 1883 -t 'XD2rfR9Bez/GqMpRSEobh/TvLQehMg0E/sub' -m '<base64>'
 ```   
 
-
 Response (base64 or raw) arrives on the `.../pub` topic. Decode and enjoy the flag:
 ![flag](screenshots/flag.png)
 
 ---
+## TL;DR (again, cause we love that)
 
+Subscribe to `#`, decode base64 messages → figure the publish/sub topics → craft the correct `{CMD}` message → publish it → decode the response on the pub topic → flag. Simple IoT vibes, big results.
+
+---
 ## Notes, corrections & tips
 
 * MQTT default port is **1883** (unencrypted); authenticated/secure brokers may use TLS/8883.
